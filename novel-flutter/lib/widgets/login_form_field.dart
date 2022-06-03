@@ -150,32 +150,32 @@ class LoginFormFieldSuffixIcon extends StatelessWidget {
     );
   }
 
-  // List<Widget> _password(ThemeData theme) {
-  //   return [
-  //     Offstage(
-  //       offstage: !obscureText,
-  //       child: GestureDetector(
-  //         onTap: () {
-  //           obscureNotifier.value = !obscureNotifier.value;
-  //         },
-  //         child: ValueListenableBuilder(
-  //           valueListenable: obscureNotifier,
-  //           builder: (BuildContext context, bool value, Widget? child) => Icon(
-  //             value ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-  //             color: value ? theme.hintColor : theme.colorScheme.secondary,
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //     LoginFormFieldClearIcon(controller),
-  //   ];
-  // }
+// List<Widget> _password(ThemeData theme) {
+//   return [
+//     Offstage(
+//       offstage: !obscureText,
+//       child: GestureDetector(
+//         onTap: () {
+//           obscureNotifier.value = !obscureNotifier.value;
+//         },
+//         child: ValueListenableBuilder(
+//           valueListenable: obscureNotifier,
+//           builder: (BuildContext context, bool value, Widget? child) => Icon(
+//             value ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
+//             color: value ? theme.hintColor : theme.colorScheme.secondary,
+//           ),
+//         ),
+//       ),
+//     ),
+//     LoginFormFieldClearIcon(controller),
+//   ];
+// }
 
-  // List<Widget> _normal(ThemeData theme) {
-  //   return [
-  //     LoginFormFieldClearIcon(controller),
-  //   ];
-  // }
+// List<Widget> _normal(ThemeData theme) {
+//   return [
+//     LoginFormFieldClearIcon(controller),
+//   ];
+// }
 }
 
 /// 清空图标
