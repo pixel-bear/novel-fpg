@@ -174,7 +174,6 @@ class _State extends State<SignInPage> {
                   prefixIcon: Icons.password,
                   controller: _passwordController,
                   obscureText: true,
-                  visibly: true,
                   textInputAction: TextInputAction.done,
                   focusNode: _passwordFocusNode,
                 ),

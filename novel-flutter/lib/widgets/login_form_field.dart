@@ -12,7 +12,6 @@ class LoginFormField extends StatefulWidget {
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final TextInputAction? textInputAction;
-  final bool visibly;
   final bool autofocus;
   final FocusNode? focusNode;
 
@@ -24,7 +23,6 @@ class LoginFormField extends StatefulWidget {
     this.obscureText = false,
     this.validator,
     this.textInputAction,
-    this.visibly = false,
     this.autofocus = false,
     this.focusNode,
   }) : super(key: key);
@@ -96,7 +94,6 @@ class _LoginFormFieldState extends State<LoginFormField> {
               controller: controller,
               obscureText: widget.obscureText,
               obscureNotifier: obscureNotifier,
-              visibly: widget.visibly,
             ),
           ).applyDefaults(Theme.of(context).inputDecorationTheme),
         ),
@@ -112,14 +109,12 @@ class LoginFormFieldSuffixIcon extends StatelessWidget {
   final ValueNotifier<bool> obscureNotifier;
 
   final bool obscureText;
-  final bool visibly; // 密码可见
 
   const LoginFormFieldSuffixIcon({
     Key? key,
     required this.controller,
     required this.obscureNotifier,
     this.obscureText = true, // 晦涩的文字
-    this.visibly = true,
   }) : super(key: key);
 
   @override
@@ -128,7 +123,6 @@ class LoginFormFieldSuffixIcon extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.end,
-      // children: visibly ? _password(theme) : _normal(theme),
       children: [
         Offstage(
           offstage: !obscureText,
@@ -150,32 +144,6 @@ class LoginFormFieldSuffixIcon extends StatelessWidget {
     );
   }
 
-// List<Widget> _password(ThemeData theme) {
-//   return [
-//     Offstage(
-//       offstage: !obscureText,
-//       child: GestureDetector(
-//         onTap: () {
-//           obscureNotifier.value = !obscureNotifier.value;
-//         },
-//         child: ValueListenableBuilder(
-//           valueListenable: obscureNotifier,
-//           builder: (BuildContext context, bool value, Widget? child) => Icon(
-//             value ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-//             color: value ? theme.hintColor : theme.colorScheme.secondary,
-//           ),
-//         ),
-//       ),
-//     ),
-//     LoginFormFieldClearIcon(controller),
-//   ];
-// }
-
-// List<Widget> _normal(ThemeData theme) {
-//   return [
-//     LoginFormFieldClearIcon(controller),
-//   ];
-// }
 }
 
 /// 清空图标
